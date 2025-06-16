@@ -1,66 +1,129 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/BKnvCbPL)
-[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=19768938)
-Book Hub: A React Discovery App (Summative Project)
+# Book Hub Project Setup
 
-This project aims to build a web application, Book Hub, for discovering books using React with TypeScript for the frontend and a backend API (JavaScript or Python) to manage book data.
+## Project Structure
+```
+book-hub/
+├── frontend/          # React + TypeScript application
+│   ├── src/
+│   ├── public/
+│   ├── package.json
+│   └── vite.config.ts
+├── backend/           # Express.js API server
+│   ├── src/
+│   │   ├── models/
+│   │   ├── routes/
+│   │   ├── controllers/
+│   │   ├── middleware/
+│   │   └── server.js
+│   └── package.json
+├── package.json       # Root package.json for managing both projects
+├── .gitignore
+└── README.md
+```
 
-## Project Goals
+## Completed Tasks (Level 1 - Project Setup & Foundation)
 
-- Develop a user-friendly interface for browsing books.
-- Implement functionalities for filtering and searching books by genre, author, publication date, etc.
-- Utilize React and TypeScript to build a responsive and interactive frontend.
-- Design a backend API to handle book data storage and retrieval.
-- Integrate the frontend and backend for a seamless user experience.
+### ✅ Project Structure Setup
+- [x] Created frontend directory with React + TypeScript (Vite)
+- [x] Created backend directory with Express.js
+- [x] Set up package.json files for both frontend and backend
+- [x] Configured TypeScript for frontend
+- [x] Set up development environment
 
-## Technical Specifications
+### ✅ Basic Configuration
+- [x] Configured build tools (Vite for frontend)
+- [x] Set up linting and formatting (ESLint included with Vite)
+- [x] Configured Git hooks and project structure
+- [x] Set up environment variables structure
+- [x] Created root package.json with concurrent development scripts
 
-### Frontend (React with TypeScript):
+### ✅ Dependencies Installed
 
-- Implement components for displaying book listings, individual book details, and filtering options.
-- Utilize TypeScript for type safety and improved code maintainability.
-- Design a responsive layout that adapts to different screen sizes.
-- Integrate state management for filtering and user interactions (e.g., Redux, Context API).
-- Implement functionalities like the search bar, genre filters, and sorting by various criteria (date, rating).
-- Consider using a UI library like Material-UI or Bootstrap for a polished look.
-- Handle user interactions for potential future functionalities like user accounts and book ratings.
+#### Frontend Dependencies:
+- React + TypeScript (Vite)
+- Material-UI (@mui/material, @emotion/react, @emotion/styled)
+- React Router DOM
+- Axios for API calls
+- Development tools (ESLint, Prettier, @types/node)
 
-### Backend (JavaScript or Python)
+#### Backend Dependencies:
+- Express.js
+- CORS middleware
+- dotenv for environment variables
+- Mongoose for MongoDB
+- Development tools (nodemon, TypeScript types)
 
-- Design and build a RESTful API to manage book data (CRUD operations: Create, Read, Update, Delete).
-- Choose Node.js (JavaScript) or a Python framework like Django, Fast API or Flask for the backend.
-- Implement a data storage solution (e.g., MongoDB, PostgreSQL) to store book information.
-- Design API endpoints for fetching book listings, individual book details, and handling filter requests.
-- Implement proper authentication and authorization mechanisms if user accounts are planned for the future.
+## Next Steps
 
-## Assessment Criteria
+### Level 2: Backend Foundation
+1. **Database Setup**
+   - Set up MongoDB connection
+   - Design book data schema
+   - Create database models
 
-### React Skills (70%):
+2. **Basic API Structure**
+   - Set up Express.js server with proper middleware
+   - Create basic API endpoints
+   - Add error handling
 
-- Effective use of React components and lifecycle methods.
-- Implementation of state management for filtering and user interactions.
-- Utilization of TypeScript for type safety and code maintainability.
-- Design of a responsive and user-friendly UI.
-- Integration of search and filter functionalities for books.
+3. **Sample Data**
+   - Create seed data with books
+   - Include various genres, authors, publication dates
 
-### Backend Development (20%):
+### Level 3: Frontend Foundation
+1. **React App Setup**
+   - Set up routing (React Router)
+   - Configure state management (Context API)
+   - Set up Material-UI theme
 
-- Design and implementation of a RESTful API using Node.js or a Python framework.
-- Connection to a chosen database for book data storage.
-- Implementation of API endpoints for fetching and filtering book data.
-- Proper handling of data requests and responses.
+2. **Core Components**
+   - Create basic layout components
+   - Implement navigation/header
+   - Create book card component
 
-### Project Completion and Functionality (10%):
+## Development Commands
 
-- Overall project functionality and meeting project goals.
-- Documentation of code and functionalities.
-- Error handling and user experience considerations.
+### Root Level (Run both frontend and backend)
+```bash
+npm run dev              # Start both frontend and backend in development mode
+npm run dev:frontend     # Start only frontend
+npm run dev:backend      # Start only backend
+npm run build           # Build frontend for production
+npm run start           # Start backend in production mode
+```
 
-## Additional Considerations:
+### Frontend Only
+```bash
+cd frontend
+npm run dev             # Start development server
+npm run build           # Build for production
+npm run preview         # Preview production build
+```
 
-- Implement pagination for displaying large sets of book listings.
-- Consider user authentication and authorization for future functionalities like user accounts and book ratings.
-- Deploy the application to a hosting platform for accessibility.
+### Backend Only
+```bash
+cd backend
+npm run dev             # Start development server with nodemon
+npm start               # Start production server
+```
 
-## Submission
+## Environment Variables
 
-This work will be submitted with a URL of well-documented GitHub Repositories / Repository (in case you put the frontend and backend under one repo).
+### Backend (.env file needed in backend directory)
+```
+PORT=5000
+MONGODB_URI=your_mongodb_connection_string_here
+```
+
+### Frontend (.env file needed in frontend directory)
+```
+VITE_API_URL=http://localhost:5000
+```
+
+## Notes
+- Frontend runs on http://localhost:5173 (Vite default)
+- Backend runs on http://localhost:5000
+- Both projects are configured for concurrent development
+- TypeScript is configured for both frontend and backend
+- Material-UI is set up for frontend styling
+- MongoDB will be used as the database 
